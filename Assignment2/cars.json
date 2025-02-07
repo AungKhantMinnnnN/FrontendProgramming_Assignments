@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Tesla Model S",
+    "image": "https://example.com/tesla-model-s.jpg",
+    "price": "$100/day",
+    "range": "405 miles",
+    "seats": 5
+  },
+  {
+    "name": "Nissan Leaf",
+    "image": "https://example.com/nissan-leaf.jpg",
+    "price": "$70/day",
+    "range": "226 miles",
+    "seats": 5
+  },
+  {
+    "name": "Chevrolet Bolt EV",
+    "image": "https://example.com/chevy-bolt.jpg",
+    "price": "$80/day",
+    "range": "259 miles",
+    "seats": 5
+  },
+  {
+    "name": "BMW i3",
+    "image": "https://example.com/bmw-i3.jpg",
+    "price": "$90/day",
+    "range": "153 miles",
+    "seats": 4
+  }
+]

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function loadCarCollection() {
+            fetch("cars_data.json")
+                .then((response) => response.json())
+                .then((data) => {
+                const carCollection = document.getElementById("car-collection");
+                if (carCollection) {
+                    carCollection.innerHTML = data
+                    .map(
+                        (car) => `
+                                <div class="bg-white p-4 rounded-lg shadow-md">
+                                    <img src="${car.image}" alt="${car.name}" class="w-full h-48 object-cover rounded">
+                                    <h3 class="text-lg font-semibold mt-2">${car.name}</h3>
+                                    <p class="text-gray-600">Price: ${car.price}</p>
+                                    <p class="text-gray-600">Range: ${car.range}</p>
+                                    <p class="text-gray-600">Seats: ${car.seats}</p>
+                                </div>
+                            `
+                    )
+                    .join("");
+                }
+                })
+                .catch((error) => console.error("Error loading car data:", error));
+        }
+
+
+        document.addEventListener("DOMContentLoaded", function(){
+            loadCarCollection();
+        });
+    </script>
+</body>
+</html>
