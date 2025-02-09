@@ -3,10 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AZoom Car Rental - Cars Collection</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-green-600 text-white font-sans">
     
+    <nav class="bg-white shadow-md py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-green-600">AZoom Car Rental</a>
+            <div class="space-x-4">
+                <a href="./index.html" class="text-gray-700 hover:text-green-600">Home</a>
+                <a href="./carsCollection.html" class="text-gray-700 hover:text-green-600">Cars</a>
+                <a href="./booking.html" class="text-gray-700 hover:text-green-600">Booking</a>
+                <a href="./contactUs.html" class="text-gray-700 hover:text-green-600">Contact</a>
+                <a href="./newLogin.html" id="login-icon" class="text-gray-700 hover:text-green-600">
+                    <i class="fas fa-sign-in-alt" id="login-icon-text"></i> Login
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto py-10 px-4">
+        <h1 class="text-4xl font-bold text-center text-white mb-8">Our Cars Collection</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Car Card 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <img src="https://via.placeholder.com/300" alt="Tesla Model 3"
+                    class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-xl font-semibold text-black">Tesla Model 3</h2>
+                <p class="text-gray-700 mb-4">The Tesla Model 3 is an all-electric sedan with cutting-edge technology.</p>
+                <a href="#" class="text-green-600 hover:text-green-800">Rent Now</a>
+            </div>
+            <!-- Car Card 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <img src="https://via.placeholder.com/300" alt="Nissan Leaf"
+                    class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-xl font-semibold text-black">Nissan Leaf</h2>
+                <p class="text-gray-700 mb-4">The Nissan Leaf is a reliable, compact electric car perfect for city driving.
+                </p>
+                <a href="#" class="text-green-600 hover:text-green-800">Rent Now</a>
+            </div>
+            <!-- Car Card 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <img src="https://via.placeholder.com/300" alt="Chevy Bolt"
+                    class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-xl font-semibold text-black">Chevy Bolt</h2>
+                <p class="text-gray-700 mb-4">The Chevy Bolt is an affordable and efficient all-electric vehicle.</p>
+                <a href="#" class="text-green-600 hover:text-green-800">Rent Now</a>
+            </div>
+            <!-- Car Card 4 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <img src="https://via.placeholder.com/300" alt="Ford Mustang Mach-E"
+                    class="w-full h-48 object-cover rounded-lg mb-4">
+                <h2 class="text-xl font-semibold text-black">Ford Mustang Mach-E</h2>
+                <p class="text-gray-700 mb-4">The Ford Mustang Mach-E is a high-performance electric SUV with a muscle-car
+                    spirit.</p>
+                <a href="#" class="text-green-600 hover:text-green-800">Rent Now</a>
+            </div>
+        </div>
+    </div>
 
     <script>
         function loadCarCollection() {

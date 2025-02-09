@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZoom Car Rental - Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-green-600 text-white font-sans">
+
+    <nav class="bg-white shadow-md py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-green-600">AZoom Car Rental</a>
+            <div class="space-x-4">
+                <a href="./index.html" class="text-gray-700 hover:text-green-600">Home</a>
+                <a href="./carsCollection.html" class="text-gray-700 hover:text-green-600">Cars</a>
+                <a href="./booking.html" class="text-gray-700 hover:text-green-600">Booking</a>
+                <a href="./contactUs.html" class="text-gray-700 hover:text-green-600">Contact</a>
+                <a href="./newLogin.html" id="login-icon" class="text-gray-700 hover:text-green-600">
+                    <i class="fas fa-sign-in-alt" id="login-icon-text"></i> Login
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container mx-auto py-10 px-4">
+        <h1 class="text-4xl font-bold text-center text-black mb-8">Car Booking</h1>
+        <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
+            <form action="#" method="POST">
+                <!-- Car Info (Populated) -->
+                <div class="mb-4">
+                    <h2 class="text-2xl font-semibold text-black mb-2" id="car-model">Tesla Model 3</h2>
+                    <img src="https://via.placeholder.com/300" alt="Car"
+                        class="w-full h-48 object-cover rounded-lg mb-4" id="car-image">
+                </div>
+
+                <!-- User Info -->
+                <div class="flex flex-col space-y-4">
+                    <div>
+                        <label for="name" class="block text-black">Full Name</label>
+                        <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-lg"
+                            placeholder="Enter your name" required>
+                    </div>
+                
+                    <div>
+                        <label for="email" class="block text-black">Email Address</label>
+                        <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg"
+                            placeholder="Enter your email" required>
+                    </div>
+                
+                    <div>
+                        <label for="phone" class="block text-black">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="w-full p-3 border border-gray-300 rounded-lg"
+                            placeholder="Enter your phone number" required>
+                    </div>
+                
+                    <!-- Credit Card Info -->
+                    <div>
+                        <label for="credit-card" class="block text-black">Credit Card Number</label>
+                        <input type="text" id="credit-card" name="credit-card" class="w-full p-3 border border-gray-300 rounded-lg"
+                            placeholder="Enter your credit card number" required>
+                    </div>
+                
+                    <div class="flex space-x-4">
+                        <div class="w-1/2">
+                            <label for="expiry" class="block text-black">Expiration Date</label>
+                            <input type="month" id="expiry" name="expiry" class="w-full p-3 border border-gray-300 rounded-lg" required>
+                        </div>
+                
+                        <div class="w-1/2">
+                            <label for="cvv" class="block text-black">CVV</label>
+                            <input type="text" id="cvv" name="cvv" class="w-full p-3 border border-gray-300 rounded-lg"
+                                placeholder="Enter your CVV" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="mb-4">
+                    <button type="submit" class="w-full p-3 bg-green-600 text-white font-semibold rounded-lg">
+                        Submit Booking
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Get car information from URL query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const carModel = urlParams.get('carModel') || 'Tesla Model 3';
+        const carImage = urlParams.get('carImage') || 'https://via.placeholder.com/300';
+
+        // Populate car details
+        document.getElementById('car-model').textContent = carModel;
+        document.getElementById('car-image').src = carImage;
+    </script>
+</body>
+
+</html>
