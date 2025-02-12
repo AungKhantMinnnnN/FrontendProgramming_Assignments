@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZoom Car Rental</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="font-sans antialiased">
+    <!-- Header -->
+    <header class="bg-gray-800 text-white">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <h1 class="text-2xl font-bold">AZoom Car Rental</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#fleet" class="hover:underline">Our Fleet</a></li>
+                    <li><a href="#contact" class="hover:underline">Contact</a></li>
+                    <li><a href="#" class="hover:underline" onclick="openLoginDialog(event)">LogIn</a></li>
+                    <li><a href="#" class="hidden hover:underline">LogOut</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Modal Backdrop -->
+    <div id="modalBackdrop" class="hidden fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-40"></div>
+    
+    <!-- Modal -->
+    <div id="loginModal" class="hidden fixed inset-0 flex items-center justify-center z-50">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+            <div class="flex items-center justify-center">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Login</h2>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                    <input type="email"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 border-gray-900 text-gray-700"
+                        placeholder="Enter your email">
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                    <input type="password"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 border-gray-900 text-gray-700"
+                        placeholder="Enter your password">
+                </div>
+                <button type="submit"
+                    class="w-full bg-gray-800 text-white py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Login</button>
+            </form>
+            <div class="flex items-center justify-center">
+                <button onclick="closeLoginDialog(event)" class="mt-4 text-sm text-gray-600 hover:text-gray-800 focus:outline-none">
+                    Close
+                </button>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <!-- Hero Section -->
+    <section class="bg-cover bg-center h-screen text-white" style="background-image: url('./public/home-background-img.jpg');">
+        <div class="container mx-auto flex flex-col justify-center items-center h-full">
+            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-center text-gray-900">Drive and experience electric vehicles the easy
+                way</h2>
+            <p class="text-lg md:text-2xl mb-8 text-center text-gray-900">Ranging from performance to cross-functional vehicles,
+                whether you are looking for a fun driving experience, or a practical car for your family, we have you
+                covered.</p>
+
+            <div class="flex w-full">
+                <form class="space-y-4 ml-auto p-4 w-1/3 bg-white bg-opacity-50">
+                    <div>
+                        <label class="block text-gray-900 text-sm font-bold mb-2">Location</label>
+                        <input type="text"
+                            class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
+                            placeholder="Enter location">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-gray-900 text-sm font-bold mb-2">Pick-Up Date *</label>
+                            <input type="date"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
+                        </div>
+                        <div>
+                            <label class="block text-gray-900 text-sm font-bold mb-2">Return Date *</label>
+                            <input type="date"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-gray-900 text-sm font-bold mb-2">Pick-Up Time</label>
+                            <input type="time"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
+                        </div>
+                        <div>
+                            <label class="block text-gray-900 text-sm font-bold mb-2">Return Time</label>
+                            <input type="time"
+                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900">
+                        </div>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-gray-800 text-white py-2 rounded-lg hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500">Reserve now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="our-story" class="py-12 bg-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-3xl font-bold mb-6 text-white underline">Our Story</h3>
+            <div class="max-w-4xl mx-auto grid grid-cols-2 gap-4">
+                <p class="text-lg text-white mb-6">
+                    AZoom Car Rental was founded with a vision to provide convenient, affordable, and eco-friendly
+                    transportation solutions. Our journey began with a simple idea: to make electric vehicle rentals
+                    seamless and accessible to everyone.
+                </p>
+                <p class="text-lg text-white mb-6">
+                    Over the years, we have built a reputation for quality service, a diverse fleet of well-maintained
+                    electric cars, and a hassle-free booking experience. Whether you're looking for a short-term rental or a
+                    long-term lease, AZoom is here to drive you forward.
+                </p>
+                <p class="text-lg text-white col-span-2">
+                    Join us in our mission to revolutionize car rentals and contribute to a greener future!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-white">
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="py-12 bg-gray-800">
+        <div class="container mx-auto text-center">
+            <div class="grid grid-cols-2 gap-4 text-center place-items-center">
+                <h3 class="text-3xl font-bold mb-6 text-white underline">What we provide</h3>
+                <div class="col-span-1">
+                    <p class="text-lg mb-4 mx-auto text-white">We are the top EV rental company in Singapore</p>
+                    <div class="flex flex-wrap justify-center">
+                        <div class="w-full md:w-1/3 p-4 border-r-2 border-white">
+                            <h4 class="text-2xl font-semibold mb-2 text-white">Quality Service</h4>
+                            <p class="text-white">Our highly-trained and friendly staff are available to assist you 24/7.</p>
+                        </div>
+                        <div class="w-full md:w-1/3 p-4 border-r-2 border-white">
+                            <h4 class="text-2xl font-semibold mb-2 text-white">No Deposit Required</h4>
+                            <p class="text-white">You will only be charged for your usage after the rental period has ended.
+                            </p>
+                        </div>
+                        <div class="w-full md:w-1/3 p-4 border-r-2 border-white">
+                            <h4 class="text-2xl font-semibold mb-2 text-white">Quick and Easy</h4>
+                            <p class="text-white">Convenient online booking system allows you to reserve and start driving
+                                within the day.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-white">
+
+    <!-- Our Fleet Section -->
+    <section id="fleet" class="py-12 bg-gray-800">
+        <div class="container mx-auto text-center">
+            <h3 class="text-3xl font-bold mb-6 text-white underline">Our Fleet</h3>
+            <div class="flex flex-wrap justify-center">
+                <!-- Vehicle Card -->
+                <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="relative group bg-white shadow-lg rounded-lg overflow-hidden">
+                        <img src="./public/tesla1.jpg" alt="Car" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold">Tesla Model 3</h4>
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gray-900 bg-opacity-90 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white p-6">
+                            <p class="text-lg">Price: $120/day</p>
+                            <p class="text-lg">Range: 350 miles</p>
+                            <p class="text-lg">Seats: 5</p>
+                            <a href="#" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Book Now</a>
+                        </div>
+                    </div>
+
+                    <div class="relative group bg-white shadow-lg rounded-lg overflow-hidden">
+                        <img src="./public/tesla1.jpg" alt="Car" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold">Tesla Model 3</h4>
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gray-900 bg-opacity-90 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white p-6">
+                            <p class="text-lg">Price: $120/day</p>
+                            <p class="text-lg">Range: 350 miles</p>
+                            <p class="text-lg">Seats: 5</p>
+                            <a href="#" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Book Now</a>
+                        </div>
+                    </div>
+
+                    <div class="relative group bg-white shadow-lg rounded-lg overflow-hidden">
+                        <img src="./public/tesla1.jpg" alt="Car" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h4 class="text-xl font-bold">Tesla Model 3</h4>
+                        </div>
+                        <div
+                            class="absolute inset-0 bg-gray-900 bg-opacity-90 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white p-6">
+                            <p class="text-lg">Price: $120/day</p>
+                            <p class="text-lg">Range: 350 miles</p>
+                            <p class="text-lg">Seats: 5</p>
+                            <a href="#" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-center p-4">
+            <a href="#" class="items-center text-blue-500 underline justify-center">See More</a>
+        </div>
+    </section>
+
+    <hr class="border-white">
+
+    <!-- Footer -->
+    <footer class="bg-white text-gray-900 py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 AZoom Car Rental. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function openLoginDialog(event){
+            event.preventDefault();
+            document.getElementById('modalBackdrop').classList.remove('hidden');
+            document.getElementById('loginModal').classList.remove('hidden');
+        }
+
+        function closeLoginDialog(event){
+            event.preventDefault();
+            document.getElementById('modalBackdrop').classList.add('hidden');
+            document.getElementById('loginModal').classList.add('hidden');
+        }
+    </script>
+
+</body>
+
+</html>
