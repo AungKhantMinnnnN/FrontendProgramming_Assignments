@@ -15,10 +15,10 @@
             <h1 class="text-2xl font-bold">AZoom Car Rental</h1>
             <nav>
                 <ul class="flex space-x-4">
-                    <li><a href="#fleet" class="hover:underline">Our Fleet</a></li>
-                    <li><a href="#contact" class="hover:underline">Contact</a></li>
-                    <li><a href="#" class="hover:underline" onclick="openLoginDialog(event)">LogIn</a></li>
-                    <li><a href="#" class="hidden hover:underline">LogOut</a></li>
+                    <li><a href="fleet.html" class="hover:underline">Our Fleet</a></li>
+                    <li><a href="contactUs.html" class="hover:underline">Contact</a></li>
+                    <li><a href="#" class="hover:underline" id="navLogin" onclick="openLoginDialog(event)">LogIn</a></li>
+                    <li><a href="#" class="hidden hover:underline" id="navLogout" onclick="logOut(event)">LogOut</a></li>
                 </ul>
             </nav>
         </div>
@@ -35,18 +35,21 @@
             </div>
             <form class="space-y-4">
                 <div>
-                    <label class="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                    <input type="email"
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Username</label>
+                    <input type="text"
+                        id="usernameInput"
                         class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 border-gray-900 text-gray-700"
                         placeholder="Enter your email">
                 </div>
                 <div>
                     <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
                     <input type="password"
+                        id = "passwordInput"
                         class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 border-gray-900 text-gray-700"
                         placeholder="Enter your password">
                 </div>
-                <button type="submit"
+                <button type="submit" 
+                    onclick="login(event)"
                     class="w-full bg-gray-800 text-white py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Login</button>
             </form>
             <div class="flex items-center justify-center">
@@ -166,54 +169,14 @@
             <h3 class="text-3xl font-bold mb-6 text-white underline">Our Fleet</h3>
             <div class="flex flex-wrap justify-center">
                 <!-- Vehicle Card -->
-                <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="relative group bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img src="./public/tesla1.jpg" alt="Car" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h4 class="text-xl font-bold">Tesla Model 3</h4>
-                        </div>
-                        <div
-                            class="absolute inset-0 bg-gray-900 bg-opacity-90 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white p-6">
-                            <p class="text-lg">Price: $120/day</p>
-                            <p class="text-lg">Range: 350 miles</p>
-                            <p class="text-lg">Seats: 5</p>
-                            <a href="#" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Book Now</a>
-                        </div>
-                    </div>
-
-                    <div class="relative group bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img src="./public/tesla1.jpg" alt="Car" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h4 class="text-xl font-bold">Tesla Model 3</h4>
-                        </div>
-                        <div
-                            class="absolute inset-0 bg-gray-900 bg-opacity-90 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white p-6">
-                            <p class="text-lg">Price: $120/day</p>
-                            <p class="text-lg">Range: 350 miles</p>
-                            <p class="text-lg">Seats: 5</p>
-                            <a href="#" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Book Now</a>
-                        </div>
-                    </div>
-
-                    <div class="relative group bg-white shadow-lg rounded-lg overflow-hidden">
-                        <img src="./public/tesla1.jpg" alt="Car" class="w-full h-48 object-cover">
-                        <div class="p-4">
-                            <h4 class="text-xl font-bold">Tesla Model 3</h4>
-                        </div>
-                        <div
-                            class="absolute inset-0 bg-gray-900 bg-opacity-90 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white p-6">
-                            <p class="text-lg">Price: $120/day</p>
-                            <p class="text-lg">Range: 350 miles</p>
-                            <p class="text-lg">Seats: 5</p>
-                            <a href="#" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Book Now</a>
-                        </div>
-                    </div>
+                <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6" id="homeFleetContainer">
+                    
                 </div>
             </div>
         </div>
 
         <div class="flex items-center justify-center p-4">
-            <a href="#" class="items-center text-blue-500 underline justify-center">See More</a>
+            <a href="fleet.html" class="items-center text-blue-500 underline justify-center">See More</a>
         </div>
     </section>
 
@@ -226,18 +189,12 @@
         </div>
     </footer>
 
+    <script src="./script.js"></script>
     <script>
-        function openLoginDialog(event){
-            event.preventDefault();
-            document.getElementById('modalBackdrop').classList.remove('hidden');
-            document.getElementById('loginModal').classList.remove('hidden');
-        }
-
-        function closeLoginDialog(event){
-            event.preventDefault();
-            document.getElementById('modalBackdrop').classList.add('hidden');
-            document.getElementById('loginModal').classList.add('hidden');
-        }
+        document.addEventListener("DOMContentLoaded", function() {
+            changeNav();
+            populateHomeFleet();
+        });
     </script>
 
 </body>

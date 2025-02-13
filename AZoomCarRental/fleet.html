@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZoom Car Rental - Our Fleet</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-800">
+
+    <!-- Header -->
+    <header class="bg-gray-800 text-white">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <h1 class="text-2xl font-bold">
+                <a href="index.html">AZoom Car Rental</a>
+            </h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="fleet.html" class="hover:underline">Our Fleet</a></li>
+                    <li><a href="contactUs.html" class="hover:underline">Contact</a></li>
+                    <li><a href="#" class="hover:underline" onclick="openLoginDialog(event)">LogIn</a></li>
+                    <li><a href="#" class="hidden hover:underline">LogOut</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Modal Backdrop -->
+    <div id="modalBackdrop" class="hidden fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-40"></div>
+    
+    <!-- Modal -->
+    <div id="loginModal" class="hidden fixed inset-0 flex items-center justify-center z-50">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+            <div class="flex items-center justify-center">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Login</h2>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Username</label>
+                    <input type="text"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 border-gray-900 text-gray-700"
+                        placeholder="Enter your email">
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                    <input type="password"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 border-gray-900 text-gray-700"
+                        placeholder="Enter your password">
+                </div>
+                <button type="submit"
+                    class="w-full bg-gray-800 text-white py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Login</button>
+            </form>
+            <div class="flex items-center justify-center">
+                <button onclick="closeLoginDialog(event)"
+                    class="mt-4 text-sm text-gray-600 hover:text-gray-800 focus:outline-none">
+                    Close
+                </button>
+            </div>
+    
+        </div>
+    </div>
+
+    <section class="py-12 container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8">Our Fleet</h2>
+    
+        <!-- Filter and Sort Controls -->
+        <div class="flex flex-wrap justify-center gap-4 mb-8">
+            <input id="search" type="text" placeholder="Search by name" class="p-2 border rounded">
+            <select id="priceFilter" class="p-2 border rounded">
+                <option value="">Filter by Price</option>
+                <option value="low">Low to High</option>
+                <option value="high">High to Low</option>
+            </select>
+            <select id="seatsFilter" class="p-2 border rounded">
+                <option value="">Filter by Seats</option>
+                <option value="2">2 Seats</option>
+                <option value="4">4 Seats</option>
+                <option value="5">5 Seats</option>
+                <option value="7">7+ Seats</option>
+            </select>
+            <button id="sortPrice" class="bg-blue-500 text-white px-4 py-2 rounded">Sort by Price</button>
+        </div>
+    
+        <!-- Car Grid -->
+        <div id="carGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Car Cards will be generated here dynamically -->
+        </div>
+
+
+        <!-- Popup dialog -->
+        <div id="carDialog" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+            <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+                <img id="carImage" src="" alt="Car Image" class="w-full h-48 object-cover rounded mb-4">
+                <h2 id="carName" class="text-2xl font-bold mb-4"></h2>
+                <p id="carPrice" class="text-lg text-gray-700"></p>
+                <p id="carSeats" class="text-lg text-gray-700"></p>
+
+                <!-- User Information Form -->
+                <form class="mt-4">
+                    <h3 class="text-lg font-bold mb-2">User Information</h3>
+                    <input type="text" id="username" placeholder="Username" class="w-full p-2 mb-2 border rounded">
+                    <input type="email" id="email" placeholder="Email" class="w-full p-2 mb-2 border rounded">
+                    <input type="tel" id="phone" placeholder="Phone Number" class="w-full p-2 mb-2 border rounded">
+                
+                    <select id="pickupLocation" class="w-full p-2 mb-2 border rounded">
+                        <option value="">Select Pickup Location</option>
+                        <option value="Central">Singapore Central</option>
+                        <option value="East">Singapore East</option>
+                        <option value="West">Singapore West</option>
+                        <option value="North">Singapore North</option>
+                        <option value="South">Singapore South</option>
+                    </select>
+                </form>
+                
+                <!-- Credit Card Details -->
+                <form class="mt-4">
+                    <h3 class="text-lg font-bold mb-2">Payment Information</h3>
+                    <input type="text" id="cardNumber" placeholder="Card Number" class="w-full p-2 mb-2 border rounded">
+                    <input type="text" id="cardExpiry" placeholder="Expiry Date (MM/YY)" class="w-full p-2 mb-2 border rounded">
+                    <input type="text" id="cardCVC" placeholder="CVC" class="w-full p-2 mb-2 border rounded">
+                </form>
+                
+                <div class="flex items-center">
+                    <button onclick="closeDialog()" class="mt-4 bg-red-500 text-white px-4 py-2 rounded">Reserve now!</button>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <script src="./script.js"></script>
+    <script>
+        document.getElementById("search").addEventListener("input", filterCars);
+        document.getElementById("priceFilter").addEventListener("change", filterCars);
+        document.getElementById("seatsFilter").addEventListener("change", filterCars);
+        document.getElementById("sortPrice").addEventListener("click", () => {
+            cars.sort((a, b) => a.price - b.price);
+            displayCars(cars);
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            changeNav();
+            displayCars(cars);
+        });
+
+        function closeDialog() {
+            document.getElementById("carDialog").classList.add("hidden");
+        }
+    </script>
+</body>
+</html>
