@@ -1,9 +1,9 @@
 import React from "react";
-import HeroCatImg from "../public/hero-cat.webp"
+import HeroCatImg from "../public/hero-cat-img.jpg"
 
 const Hero = () => {
     return (
-      <section className="bg-amber-100 min-h-screen flex items-center justify-center px-6">
+      <section className="bg-amber-100 min-h-screen flex items-center justify-center flex-col p-6">
         <div className="max-w-7xl w-full flex flex-col md:flex-row items-center gap-10">
           {/* Left side content */}
           <div className="text-center md:text-left max-w-lg">
@@ -30,13 +30,10 @@ const Hero = () => {
 
           {/* Right side content images and shapes*/}
           <div className="relative w-full max-w-lg">
-            <div className="absolute -top-10 left-10 w-40 h-40 bg-orange-400 rounded-full opacity-50 transition-transform hover:rotate-12 hover:scale-105"></div>
-            <div className="absolute top-10 right-0 w-40 h-40 bg-blue-500 rounded-tl-full rounded-br-full opacity-50 transition-transform hover:-rotate-12 hover:scale-105"></div>
-
             <img
               src={HeroCatImg}
-              alt="Cute Dog"
-              className="relative w-full rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl mix-blend-multiply"
+              alt="Cute cat"
+              className="relative w-full rounded-lg transition-transform duration-300 mix-blend-multiply h-150 w-96 object-cover"
             />
           </div>
         </div>
