@@ -1,7 +1,7 @@
 import React from "react";
 import AnimalCard from "./AnimalCard";
 
-const AdoptionSection = () => {
+const AdoptionComponent = () => {
 
     {/* Animal json to be replaced with backend request */}
     const animals = [
@@ -29,18 +29,20 @@ const AdoptionSection = () => {
     ]
 
     return (
-        <section className="bg-white items-center justify-center">
-            <div className="flex flex-col items-center justify-center min-h-screen p-6">
-                <h1 className="text-4xl font-bold text-center mb-6">Animal available for adoption near your location</h1>
+      <section className="bg-white items-center justify-center pt-50">
+        <div className="flex flex-col items-center justify-center p-6">
+          <h1 className="text-4xl font-bold text-center mb-6">
+            Animal available for adoption near your location
+          </h1>
 
-                <div className="flex flex-wrap justify-center gap-6">
-                    {animals.map((animal, index) => (
-                        <AnimalCard key={index} animal={animal} />
-                    ))}
-                </div>
-            </div>
-        </section>
-    )
+          <div className="flex flex-wrap justify-center gap-6">
+            {animals.map((animal, index) => (
+              <AnimalCard key={index} animal={animal} />
+            ))}
+          </div>
+        </div>
+      </section>
+    );
 }
 
-export default AdoptionSection;
+export default AdoptionComponent;

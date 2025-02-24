@@ -4,13 +4,9 @@ import { Link } from "@tanstack/react-router";
 
 const Navbar = () => {
 
-    const [isMenuItemSelected, setIsMenuItemSelected] = useState(false);
+    const [active, setActive] = useState("Home");
     const [isScrollingUp, setIsScrollingUp] = useState(false);
     const [lastScrollY, setLastScrollY] = useState(0);
-
-    const toggleMenu = () => {
-        setIsMenuItemSelected((prev) => (!prev));
-    };
 
     useEffect(() => {
         const handleScrolling = () => {
@@ -40,8 +36,8 @@ const Navbar = () => {
           <li>
             <Link
               to="/"
-              className="text-black hover:text-gray-500 cursor-pointer transition-transform duration-150 focus:scale-0 active:scale-0"
-              onClick={toggleMenu}
+              className={`text-black hover:text-gray-500 cursor-pointer transition-transform duration-150 focus:scale-0 active:scale-0 ${active === "Home" ? "underline" : ""}`}
+              onClick={() => setActive("Home")}
             >
               Home
             </Link>
@@ -49,26 +45,26 @@ const Navbar = () => {
           <li>
             <Link
               to="/AboutUs"
-              className="text-black hover:text-gray-500 cursor-pointer transition-transform duration-150 focus:scale-0 active:scale-0"
-              onClick={toggleMenu}
+              className={`text-black hover:text-gray-500 cursor-pointer transition-transform duration-150 focus:scale-0 active:scale-0 ${active === "AboutUs" ? "underline" : ""}`}
+              onClick={() => setActive("AboutUs")}
             >
               About Us
             </Link>
           </li>
           <li>
             <Link
-              to="/"
-              className="text-black hover:text-gray-500 cursor-pointer transition-transform duration-150 focus:scale-0 active:scale-0"
-              onClick={toggleMenu}
+              to="/Adopt"
+              className={`text-black hover:text-gray-500 cursor-pointer transition-transform duration-150 focus:scale-0 active:scale-0 ${active === "Adopt" ? "underline" : ""}`}
+              onClick={() => setActive("Adopt")}
             >
               Adopt A Pet
             </Link>
           </li>
           <li>
             <Link
-              to="/"
-              className="text-black hover:text-gray-500 cursor-pointer transition-transform duration-150 focus:scale-0 active:scale-0"
-              onClick={toggleMenu}
+              to="/Donate"
+              className={`text-black hover:text-gray-500 cursor-pointer transition-transform duration-150 focus:scale-0 active:scale-0 ${active === "Donate" ? "underline" : ""}`}
+              onClick={() => setActive("Donate")}
             >
               Donate
             </Link>
@@ -76,17 +72,8 @@ const Navbar = () => {
           <li>
             <Link
               to="/"
-              className="text-black hover:text-gray-500 cursor-pointer transition-transform duration-150 focus:scale-0 active:scale-0"
-              onClick={toggleMenu}
-            >
-              Blog
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/"
-              className="text-black hover:text-gray-500 cursor-pointer transition-transform duration-150 focus:scale-0 active:scale-0"
-              onClick={toggleMenu}
+              className={`text-black hover:text-gray-500 cursor-pointer transition-transform duration-150 focus:scale-0 active:scale-0 ${active === "ContactUs" ? "underline" : ""}`}
+              onClick={() => setActive("ContactUs")}
             >
               Contact Us
             </Link>
