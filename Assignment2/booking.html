@@ -15,11 +15,13 @@
             <a href="#" class="text-2xl font-bold text-green-600">AZoom Car Rental</a>
             <div class="space-x-4">
                 <a href="./index.html" class="text-gray-700 hover:text-green-600">Home</a>
-                <a href="./carsCollection.html" class="text-gray-700 hover:text-green-600">Cars</a>
-                <a href="./booking.html" class="text-gray-700 hover:text-green-600">Booking</a>
+                <a href="./carsCollection.html" class="text-gray-700 hover:text-green-600">Our Fleet</a>
                 <a href="./contactUs.html" class="text-gray-700 hover:text-green-600">Contact</a>
                 <a href="./newLogin.html" id="login-icon" class="text-gray-700 hover:text-green-600">
-                    <i class="fas fa-sign-in-alt" id="login-icon-text"></i> Login
+                    <i class="fas fa-sign-in-alt" id="login-icon-text"></i> LogIn
+                </a>
+                <a href="" id="logout-icon" class="text-gray-700 hover:text-green-600" style="display: none;" onclick="logOut()">
+                    <i class="fas fa-sign-in-alt" id="logout-icon-text"></i> LogOut
                 </a>
             </div>
         </div>
@@ -31,10 +33,18 @@
         <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
             <form action="#" method="POST">
                 <!-- Car Info (Populated) -->
-                <div class="mb-4">
-                    <h2 class="text-2xl font-semibold text-black mb-2" id="car-model">Tesla Model 3</h2>
-                    <img src="https://via.placeholder.com/300" alt="Car"
-                        class="w-full h-48 object-cover rounded-lg mb-4" id="car-image">
+                <div class="mb-4" id="carInfo-booking">
+                    <h2 class="text-2xl font-semibold text-black mb-2" id="carName"></h2>
+                    <img src="" alt="Car"
+                        class="w-full h-48 object-cover rounded-lg mb-4" id="carImage">
+                    <p class="text-black mb-2 block" id="carPrice"></p>
+                    <p class="text-black mb-2" id="carSeats"></p>
+                </div>
+
+                <div class="relative flex py-5 items-center">
+                    <div class="flex-grow border-t border-gray-400"></div>
+                    <span class="flex-shrink mx-4 text-gray-400">Payment information</span>
+                    <div class="flex-grow border-t border-gray-400"></div>
                 </div>
 
                 <!-- User Info -->
@@ -79,7 +89,7 @@
                 </div>
 
                 <!-- Submit Button -->
-                <div class="mb-4">
+                <div class="mb-4 mt-4">
                     <button type="submit" class="w-full p-3 bg-green-600 text-white font-semibold rounded-lg">
                         Submit Booking
                     </button>
@@ -88,15 +98,18 @@
         </div>
     </div>
 
+    <script src="script.js"></script>
     <script>
-        // Get car information from URL query parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const carModel = urlParams.get('carModel') || 'Tesla Model 3';
-        const carImage = urlParams.get('carImage') || 'https://via.placeholder.com/300';
+        document.addEventListener("DOMContentLoaded", function() {
+            checkLogInStatus();
 
-        // Populate car details
-        document.getElementById('car-model').textContent = carModel;
-        document.getElementById('car-image').src = carImage;
+            // Get car information from URL query parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const carId = urlParams.get('carId');
+
+            populateCarData(carId);
+            
+        });
     </script>
 </body>
 

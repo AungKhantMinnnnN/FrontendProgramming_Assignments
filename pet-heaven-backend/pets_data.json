@@ -1,5 +1,6 @@
 [
     {
+        "pet_id" : 1, 
         "name": "Whiskers",
         "breed": "Siamese",
         "age": "3 years",
@@ -8,6 +9,7 @@
         "image": "/src/public/cat-siamese.webp"
     },
     {
+        "pet_id": 2,
         "name": "Luna",
         "breed": "Maine Coon",
         "age": "4 years",
@@ -16,6 +18,7 @@
         "image": "/src/public/cat-maine-coon.jpg"
     },
     {
+        "pet_id": 3,
         "name": "Oliver",
         "breed": "Persian",
         "age": "2 years",
@@ -24,6 +27,7 @@
         "image": "/src/public/cat-persian.jpg"
     },
     {
+        "pet_id": 4,
         "name": "Nala",
         "breed": "Bengal",
         "age": "1 year",
@@ -32,6 +36,7 @@
         "image": "/src/public/cat-bengal.webp"
     },
     {
+        "pet_id": 5,
         "name": "Shadow",
         "breed": "British Shorthair",
         "age": "5 years",
@@ -40,6 +45,7 @@
         "image": "/src/public/cat-british-shorthair.jpg"
     },
     {
+        "pet_id": 6,
         "name": "Max",
         "breed": "Golden Retriever",
         "age": "3 years",
@@ -48,6 +54,7 @@
         "image": "/src/public/dog-golden-retriever.jpg"
     },
     {
+        "pet_id": 7,
         "name": "Bella",
         "breed": "German Shepherd",
         "age": "2 years",
@@ -56,6 +63,7 @@
         "image": "/src/public/dog-german-shepherd.jpg"
     },
     {
+        "pet_id": 8,
         "name": "Charlie",
         "breed": "Beagle",
         "age": "4 years",
@@ -64,6 +72,7 @@
         "image": "/src/public/dog-beagle.jpg"
     },
     {
+        "pet_id": 9,
         "name": "Lucy",
         "breed": "Poodle",
         "age": "1 year",
@@ -72,6 +81,7 @@
         "image": "/src/public/dog-poodle.jpg"
     },
     {
+        "pet_id": 10,
         "name": "Cooper",
         "breed": "Labrador Retriever",
         "age": "5 years",
@@ -80,6 +90,7 @@
         "image": "/src/public/dog-labrador.jpg"
     },
     {
+        "pet_id": 11,
         "name": "Kiwi",
         "breed": "Budgerigar",
         "age": "2 years",
@@ -88,6 +99,7 @@
         "image": "/src/public/bird-budgie.jpg"
     },
     {
+        "pet_id": 12,
         "name": "Sunny",
         "breed": "Canary",
         "age": "1 year",
@@ -96,6 +108,7 @@
         "image": "/src/public/bird-canary.jpg"
     },
     {
+        "pet_id": 13,
         "name": "Rio",
         "breed": "Cockatiel",
         "age": "3 years",
@@ -104,6 +117,7 @@
         "image": "/src/public/bird-cockatiel.jpg"
     },
     {
+        "pet_id": 14,
         "name": "Skye",
         "breed": "Lovebird",
         "age": "2 years",
@@ -112,6 +126,7 @@
         "image": "/src/public/bird-lovebird.jpg"
     },
     {
+        "pet_id": 15,
         "name": "Mango",
         "breed": "Parrot",
         "age": "5 years",

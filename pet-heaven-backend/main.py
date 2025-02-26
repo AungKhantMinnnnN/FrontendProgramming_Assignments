@@ -119,17 +119,15 @@ def add_owner():
     
     return jsonify(new_owner), 201
 
-@app.route("/api/adopt", methods=['POST'])
+@app.route("/api/adoptApplication", methods=['POST'])
 def adopt_pet():
     data = read_pet_data()
-    pet_id = request.json.get('petId')
+    pet_id = request.json
+    print(pet_id)
     
-    for pet in data.get('pets', []):
-        if pet.get('id') == pet_id:
-            sendEmail(pet_id, "Adoption Request")
-            return jsonify(pet), 200
+    sendEmail(pet_id, "Adoption Request")
     
-    return jsonify({"error": "Pet not found"}), 404
+    return jsonify({"success": True, "message" : "Adoption request submitted successfully."}), 200
 
 @app.route("/api/release", methods=['POST'])
 def submit_release():

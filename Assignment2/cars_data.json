@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "name": "Tesla Model S",
     "image": "https://example.com/tesla-model-s.jpg",
     "price": "$100/day",
@@ -7,6 +8,7 @@
     "seats": 5
   },
   {
+    "id": 2,
     "name": "Nissan Leaf",
     "image": "https://example.com/nissan-leaf.jpg",
     "price": "$70/day",
@@ -14,6 +16,7 @@
     "seats": 5
   },
   {
+    "id": 3,
     "name": "Chevrolet Bolt EV",
     "image": "https://example.com/chevy-bolt.jpg",
     "price": "$80/day",
@@ -21,6 +24,7 @@
     "seats": 5
   },
   {
+    "id": 4,
     "name": "BMW i3",
     "image": "https://example.com/bmw-i3.jpg",
     "price": "$90/day",
