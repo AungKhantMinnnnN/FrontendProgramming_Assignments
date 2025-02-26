@@ -16,8 +16,9 @@ const AdoptionFormPopup = ({pet, onClose}) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        console.log(pet);
         const newAdoption = {
-            pet_id: pet.id,
+            pet_id: pet.pet_id,
             name: formData.name,
             email: formData.email,
             phone: formData.phone
@@ -33,7 +34,7 @@ const AdoptionFormPopup = ({pet, onClose}) => {
         }catch(exception){
           console.log("Error while trying to submit data.", exception.message);
         }
-        onclose();
+        onClose();
     }
 
     return (

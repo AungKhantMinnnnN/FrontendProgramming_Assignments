@@ -26,7 +26,7 @@ const ContactUsComponent = () => {
             </p>
 
             <button className="bg-orange-500 text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2 transition-all duration-300 hover:bg-black hover:text-white">
-              <Link to="/">Contact Us →</Link>
+              <Link to="/ContactUs">Contact Us →</Link>
             </button>
           </div>
         </div>

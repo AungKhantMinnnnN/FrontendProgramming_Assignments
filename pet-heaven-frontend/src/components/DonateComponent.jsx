@@ -15,7 +15,7 @@ const DonateComponent = () => {
           </p>
           <div className="mt-6">
             <button className="bg-orange-500 text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2 transition-all duration-300 hover:bg-black hover:text-white">
-              <Link to="/">Donate →</Link>
+              <Link to="/Donate">Donate →</Link>
             </button>
           </div>
         </div>
