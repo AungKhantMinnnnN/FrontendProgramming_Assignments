@@ -15,22 +15,22 @@ const Footer = () => {
             <h2 className="text-lg font-bold mb-2">Explore</h2>
             <ul>
               <li>
-                <Link to="/" className="hover:text-gray-400">
+                <Link to="/Adopt" className="hover:text-gray-400">
                   Adopt A Pet
                 </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-gray-400">
+                <Link to="/Donate" className="hover:text-gray-400">
                   Donate
                 </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-gray-400">
-                  Blog
+                <Link to="/Release" className="hover:text-gray-400">
+                  Donate
                 </Link>
               </li>
               <li>
-                <Link to="/" className="hover:text-gray-400">
+                <Link to="/ContactUs" className="hover:text-gray-400">
                   Contact Us
                 </Link>
               </li>

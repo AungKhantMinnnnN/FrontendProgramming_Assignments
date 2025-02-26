@@ -62,6 +62,15 @@ const Navbar = () => {
           </li>
           <li>
             <Link
+              to="/Release"
+              className={`text-black hover:text-gray-500 cursor-pointer transition-transform duration-150 focus:scale-0 active:scale-0 ${active === "Release" ? "underline" : ""}`}
+              onClick={() => setActive("Release")}
+            >
+              Release
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/Donate"
               className={`text-black hover:text-gray-500 cursor-pointer transition-transform duration-150 focus:scale-0 active:scale-0 ${active === "Donate" ? "underline" : ""}`}
               onClick={() => setActive("Donate")}
@@ -71,7 +80,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              to="/"
+              to="/ContactUs"
               className={`text-black hover:text-gray-500 cursor-pointer transition-transform duration-150 focus:scale-0 active:scale-0 ${active === "ContactUs" ? "underline" : ""}`}
               onClick={() => setActive("ContactUs")}
             >

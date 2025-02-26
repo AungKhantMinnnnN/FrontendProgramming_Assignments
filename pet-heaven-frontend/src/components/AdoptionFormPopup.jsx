@@ -1,6 +1,9 @@
 import { useState } from "react";
+import axios from "axios";
 
 const AdoptionFormPopup = ({pet, onClose}) => {
+
+    const applicationUrl = "http://127.0.0.1:5000/api/adoptApplication";
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -11,8 +14,25 @@ const AdoptionFormPopup = ({pet, onClose}) => {
         setFormData({...formData, [event.target.name] : event.target.value });
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
+        const newAdoption = {
+            pet_id: pet.id,
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone
+        };
+
+        try{
+          const response = await axios.post(applicationUrl, newAdoption, {
+            headers :{
+              "Content-Type" : "application/json"
+            }
+          });
+          console.log(response.data);
+        }catch(exception){
+          console.log("Error while trying to submit data.", exception.message);
+        }
         onclose();
     }
 

@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/Aboutus";
 import Adopt from "./pages/Adopt";
 import Donate from "./pages/Donate";
+import ContactUs from "./pages/ContactUs";
+import Release from "./pages/Release";
 
 const rootRoute = createRootRoute({
 	component: () => <Root />,
@@ -33,4 +35,16 @@ const donateRoute = createRoute({
 	component: Donate 
 })
 
-export const routeTree = rootRoute.addChildren([indexRoute, aboutUsRoute, adoptRoute, donateRoute]);
+const contactUsRoute = createRoute({
+	getParentRoute: () => rootRoute,
+	path: "/ContactUs",
+	component: ContactUs
+})
+
+const releaseRoute = createRoute({
+	getParentRoute: () => rootRoute,
+	path: "/Release",
+	component: Release
+})
+
+export const routeTree = rootRoute.addChildren([indexRoute, aboutUsRoute, adoptRoute, donateRoute, contactUsRoute, releaseRoute]);

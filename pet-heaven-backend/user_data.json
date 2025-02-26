@@ -1,0 +1,35 @@
+[
+    {
+        "username": "john_doe",
+        "password": "P@ssw0rd123",
+        "email": "john.doe@example.com",
+        "firstName": "John",
+        "lastName": "Doe",
+        "age": 28,
+        "role": "user",
+        "createdAt": "2025-01-15T14:22:18Z",
+        "lastLogin": "2025-02-24T08:45:32Z"
+    },
+    {
+        "username": "sarah_smith",
+        "password": "Secur3P@ss!",
+        "email": "sarah.smith@example.com",
+        "firstName": "Sarah",
+        "lastName": "Smith",
+        "age": 34,
+        "role": "admin",
+        "createdAt": "2024-11-03T09:12:45Z",
+        "lastLogin": "2025-02-23T16:30:21Z"
+    },
+    {
+        "username": "alex_wong",
+        "password": "C0mpl3xPwd#42",
+        "email": "alex.wong@example.com",
+        "firstName": "Alex",
+        "lastName": "Wong",
+        "age": 22,
+        "role": "user",
+        "createdAt": "2025-02-01T12:54:10Z",
+        "lastLogin": "2025-02-25T10:15:08Z"
+    }
+]

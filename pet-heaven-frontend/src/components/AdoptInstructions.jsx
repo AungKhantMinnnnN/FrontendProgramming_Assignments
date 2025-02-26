@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 const AdoptInstructions = () => {
 
     const instructions = [

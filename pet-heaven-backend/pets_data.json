@@ -1,0 +1,122 @@
+[
+    {
+        "name": "Whiskers",
+        "breed": "Siamese",
+        "age": "3 years",
+        "sex": "Male",
+        "type": "Cat",
+        "image": "/src/public/cat-siamese.webp"
+    },
+    {
+        "name": "Luna",
+        "breed": "Maine Coon",
+        "age": "4 years",
+        "sex": "Female",
+        "type": "Cat",
+        "image": "/src/public/cat-maine-coon.jpg"
+    },
+    {
+        "name": "Oliver",
+        "breed": "Persian",
+        "age": "2 years",
+        "sex": "Male",
+        "type": "Cat",
+        "image": "/src/public/cat-persian.jpg"
+    },
+    {
+        "name": "Nala",
+        "breed": "Bengal",
+        "age": "1 year",
+        "sex": "Female",
+        "type": "Cat",
+        "image": "/src/public/cat-bengal.webp"
+    },
+    {
+        "name": "Shadow",
+        "breed": "British Shorthair",
+        "age": "5 years",
+        "sex": "Male",
+        "type": "Cat",
+        "image": "/src/public/cat-british-shorthair.jpg"
+    },
+    {
+        "name": "Max",
+        "breed": "Golden Retriever",
+        "age": "3 years",
+        "sex": "Male",
+        "type": "Dog",
+        "image": "/src/public/dog-golden-retriever.jpg"
+    },
+    {
+        "name": "Bella",
+        "breed": "German Shepherd",
+        "age": "2 years",
+        "sex": "Female",
+        "type": "Dog",
+        "image": "/src/public/dog-german-shepherd.jpg"
+    },
+    {
+        "name": "Charlie",
+        "breed": "Beagle",
+        "age": "4 years",
+        "sex": "Male",
+        "type": "Dog",
+        "image": "/src/public/dog-beagle.jpg"
+    },
+    {
+        "name": "Lucy",
+        "breed": "Poodle",
+        "age": "1 year",
+        "sex": "Female",
+        "type": "Dog",
+        "image": "/src/public/dog-poodle.jpg"
+    },
+    {
+        "name": "Cooper",
+        "breed": "Labrador Retriever",
+        "age": "5 years",
+        "sex": "Male",
+        "type": "Dog",
+        "image": "/src/public/dog-labrador.jpg"
+    },
+    {
+        "name": "Kiwi",
+        "breed": "Budgerigar",
+        "age": "2 years",
+        "sex": "Male",
+        "type": "Bird",
+        "image": "/src/public/bird-budgie.jpg"
+    },
+    {
+        "name": "Sunny",
+        "breed": "Canary",
+        "age": "1 year",
+        "sex": "Female",
+        "type": "Bird",
+        "image": "/src/public/bird-canary.jpg"
+    },
+    {
+        "name": "Rio",
+        "breed": "Cockatiel",
+        "age": "3 years",
+        "sex": "Male",
+        "type": "Bird",
+        "image": "/src/public/bird-cockatiel.jpg"
+    },
+    {
+        "name": "Skye",
+        "breed": "Lovebird",
+        "age": "2 years",
+        "sex": "Female",
+        "type": "Bird",
+        "image": "/src/public/bird-lovebird.jpg"
+    },
+    {
+        "name": "Mango",
+        "breed": "Parrot",
+        "age": "5 years",
+        "sex": "Male",
+        "type": "Bird",
+        "image": "/src/public/bird-parrot.jpg"
+    }
+]
